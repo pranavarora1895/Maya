@@ -49,7 +49,7 @@ def wishMe():
     else:
         speak('Hope you had dinner Pranav!')
 
-    speak('I am your assistant Maya!! What can I do for you?')
+    speak('What can I do for you?')
 
 
 def takeCommand():
@@ -447,6 +447,9 @@ if __name__ == '__main__':
 
         elif matched_query(query, dd.query_who_am_i) in query:
             who_are_you()
+
+        elif matched_query(query,dd.query_age) in query:
+            myAge()
 
         elif matched_query(query, dd.query_thank_you) in query:
             thank = dd.thank_you
