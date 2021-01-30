@@ -9,6 +9,8 @@ import webbrowser
 import os, sys
 import smtplib, quickstart
 import pywhatkit
+import geopy
+from geopy.distance import geodesic
 import datadynamic as dd
 import random
 import requests
@@ -186,6 +188,36 @@ def getNews():
         speak(news1)
 
 
+def getDistance(dist_list):
+    try:
+        geolocator = geopy.Nominatim(user_agent='maya')
+        distance_list = dist_list
+        location1 = geolocator.geocode(distance_list[0])
+        location2 = geolocator.geocode((distance_list[1]))
+        loc_coord1 = (location1.latitude, location1.longitude)
+        loc_coord2 = (location2.latitude, location2.longitude)
+        distance_calc = round(geodesic(loc_coord1, loc_coord2).km)
+        speak(f"The distance between {location1.address} and {location2.address} is {distance_calc} kilometers.")
+        imp1 = location1.raw.get('importance')
+        imp2 = location2.raw.get('importance')
+        #print(imp1, imp2)
+        if max(imp1, imp2) == imp1:
+            speak(f'I feel that {distance_list[0]}is more important administrative place than {distance_list[1]} ')
+        elif max(imp1, imp2) == imp2:
+            speak(f'I feel {distance_list[1]} is more important administrative place than {distance_list[0]} ')
+        else:
+            speak(f'Both {distance_list[0]} and {distance_list[1]} must be of equal administrative importance. ')
+        if distance_calc < 500:
+            speak(f'You can either take a car, bus or train to travel to {distance_list[1]}')
+        elif 500 <= distance_calc < 2000:
+            speak(f'Either a flight or the train can be a good option to reach {distance_list[1]}')
+        else:
+            speak(f'Book a flight to reach {distance_list[1]}')
+    except Exception:
+        speak('Invalid Address')
+
+
+
 def readDictation():
     try:
         file = open('dictation.txt', 'r').read()
@@ -341,6 +373,8 @@ if __name__ == '__main__':
                 webbrowser.get(browser).open('https://www.google.com')
         elif 'stack over' in query:
             webbrowser.get(browser).open('https://www.stackoverflow.com')
+        elif 'github' in query:
+            webbrowser.get(browser).open('https://github.com/pranavarora1895')
         elif 'whatsapp web' in query:
             webbrowser.get(browser).open('https://web.whatsapp.com/')
         elif 'gmail' in query:
@@ -415,6 +449,12 @@ if __name__ == '__main__':
             speak('For which place you want to get the weather data?')
             myloc = takeCommand()
             getWeather(myloc)
+
+        elif 'what is the distance between' in query:
+            distance = query.replace('what is the distance between','')
+            distance_list = distance.split('and')
+            #print(distance_list)
+            getDistance(distance_list)
 
         elif matched_query(query, dd.query_news) in query:
             print('Searching news...')
