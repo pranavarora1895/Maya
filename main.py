@@ -15,6 +15,8 @@ import datadynamic as dd
 import random
 import requests
 import platform, socket, re, uuid, json, psutil, logging
+# import automate_social
+import chatbot
 
 EMAIL_ADDRESS = os.environ.get('EMAIL_ADDRESS')
 EMAIL_PASSWORD = os.environ.get('EMAIL_PASS')
@@ -379,6 +381,14 @@ if __name__ == '__main__':
             webbrowser.get(browser).open('https://web.whatsapp.com/')
         elif 'gmail' in query:
             webbrowser.get(browser).open('https://www.gmail.com')
+        elif 'instagram' in query:
+            webbrowser.get(browser).open('https://www.instagram.com/')
+            # speak('Do you want to use hands-free mode?')
+            # permission = takeCommand()
+            # if 'yes' in permission:
+            #     speak('Sure!! You can scroll down using a blue color object.')
+            #     automate_social.handsfree_mode()
+
         elif 'play music' in query:
             mus_dir = "C:\\Users\\major\\Music\\Favourites"
             songs = os.listdir(mus_dir)
@@ -455,7 +465,9 @@ if __name__ == '__main__':
             distance_list = distance.split('and')
             #print(distance_list)
             getDistance(distance_list)
-
+        elif "let's talk" in query:
+            speak('Sure!! Why not?')
+            chatbot.chatting()
         elif matched_query(query, dd.query_news) in query:
             print('Searching news...')
             speak('Searching news!!')
