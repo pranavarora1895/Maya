@@ -17,7 +17,6 @@ import requests
 import platform, socket, re, uuid, json, psutil, logging
 # import automate_social
 import chatbot
-
 EMAIL_ADDRESS = os.environ.get('EMAIL_ADDRESS')
 EMAIL_PASSWORD = os.environ.get('EMAIL_PASS')
 user_api = os.environ.get('current_weather_api')
@@ -35,11 +34,13 @@ mydata = dd.data
 
 
 def speak(audio):
+    """ Text to Speech Recognition"""
     engine.say(audio)
     engine.runAndWait()
 
 
 def wishMe():
+    """ Starts program with wishes. It wishes according to the time in a day."""
     hour = int(datetime.datetime.now().hour)
     if 0 <= hour < 12:
         morning_wishes = dd.wish_morning
@@ -57,6 +58,7 @@ def wishMe():
 
 
 def takeCommand():
+    """ Takes Speech as input data"""
     r = sr.Recognizer()
     # r.energy_threshold = 300
     with sr.Microphone() as source:
@@ -75,6 +77,7 @@ def takeCommand():
 
 
 def sendEmail(to, content, header):
+    """ Sends Emails"""
     with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
         smtp.ehlo()
         smtp.starttls()
@@ -91,6 +94,7 @@ def sendEmail(to, content, header):
 
 
 def readEmails():
+    """Reads Emails"""
     speak('Reading first three email snippets')
     message_c = 3
     messages = quickstart.main(message_c)
@@ -104,6 +108,7 @@ def readEmails():
 
 
 def sendWhatsapp(to_message, message):
+    """Send WhatsApp Messages"""
     time_hr = datetime.datetime.now().time().hour
     time_min = datetime.datetime.now().time().minute
     if time_min == 59:
@@ -116,6 +121,7 @@ def sendWhatsapp(to_message, message):
 
 
 def getWeather(mylocspecified='Jhansi'):
+    """Get weather data from OpenWeather API"""
     try:
         location = mylocspecified
         complete_api_link = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + user_api
@@ -139,6 +145,7 @@ def getWeather(mylocspecified='Jhansi'):
 
 
 def getSystemInfo():
+    """Gets system specifications"""
     try:
         info = {}
         info['platform'] = platform.system()
@@ -156,6 +163,7 @@ def getSystemInfo():
 
 
 def myAge():
+    """Calculates its age"""
     f_date = date(2021, 1, 24)
     l_date = date.today()
     delta = l_date - f_date
@@ -179,6 +187,7 @@ def myAge():
 
 
 def getNews():
+    """Gets News data from NewsAPI"""
     news_api = open('newsapi.txt', 'r').read()
     r = requests.get('http://newsapi.org/v2/top-headlines?country=in&apiKey=' + news_api)
     data = json.loads(r.content)
@@ -191,6 +200,7 @@ def getNews():
 
 
 def getDistance(dist_list):
+    """Calculates the distance between two places and also predicts the administrative importance between the two"""
     try:
         geolocator = geopy.Nominatim(user_agent='maya')
         distance_list = dist_list
@@ -221,6 +231,7 @@ def getDistance(dist_list):
 
 
 def readDictation():
+    """Reads the previously recorded dictation"""
     try:
         file = open('dictation.txt', 'r').read()
         if file == "":
@@ -233,6 +244,7 @@ def readDictation():
 
 
 def clearDictation():
+    """Clears the previously recorded dictation"""
     speak('Are you sure you want to clear the dictation? This step can be destructive!!!(yes or no)?')
     sure = takeCommand()
     if 'yes' in sure:
@@ -246,6 +258,7 @@ def clearDictation():
 
 
 def writeDictation():
+    """Writes the dictation"""
     file = open('dictation.txt', 'r')
     read_file = file.read()
     file.close()
@@ -312,6 +325,7 @@ def writeDictation():
 
 
 def who_are_you():
+    """Gives the information about itself"""
     speak(dd.who_am_i)
     speak('Do you want to know my specifications?')
     resp = takeCommand().lower()
@@ -326,6 +340,7 @@ def who_are_you():
 
 
 def matched_query(inp_query, matching_list):
+    """Matches different queries for the same command"""
     for word in matching_list:
         if word in inp_query:
             return word
@@ -335,6 +350,7 @@ def matched_query(inp_query, matching_list):
 
 to_message, send_message_to, to, send_to = None, None, None, None
 if __name__ == '__main__':
+    """Gets all commands and actuate accordingly from here"""
     notification.notify(
         title='Maya here 😊😊',
         message='Your Virtual Assistant',
