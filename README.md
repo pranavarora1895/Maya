@@ -2,6 +2,8 @@
 
 **Maya can do a lot of things like managing your computer, sending emails or whatsapp messages for you, getting weather information, playing offline or online music, opening browser or youtube and even search news or any other information on wikipedia for you. She can read and write your given dictation as well.**
 
+![image](https://user-images.githubusercontent.com/48170643/117671991-04149c80-b1c7-11eb-86c0-ad8b86255c47.png)
+
 - It uses Google Speech Recognition Engine and Various other APIs like GMail Api, OpenWeather API, News API, etc.
 
 > ### To run the software, simply double click on the **Maya.exe**.
@@ -42,6 +44,8 @@ Important Steps to Setup Maya:
 Dont Delete Any Files.. IT MAY CRASH THE SOFTWARE!
 
 ```Start The Software Using Maya.exe File!```
+
+**You can view the video demo on this [YouTube link](https://www.youtube.com/watch?v=mO7uyD-qTX4&t=4s&ab_channel=MyKarma)**
 
 * Follow Me On Instagram at [Pranav Arora](https://www.instagram.com/arorapranav187)
 * Lets Get Connected on Linkedin at [Pranav Arora](https://www.linkedin.com/in/pranav-arora-354b71bb/)
