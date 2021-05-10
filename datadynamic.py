@@ -1,12 +1,8 @@
 """ Data bank for Maya"""
 
-data = {'pranav': ['cosmicpranav007@gmail.com', '+918933971392'],
-        'meher': ['meherkaushal15@gmail.com', '+917018102799'],
-        'mummy': ['punamarora1973@gmail.com', '+919452741610'],
-        'papa': ['peusharora1967@gmail.com','+919415945894'],
-        'family': ['None','Cp9GDD4NFMg84i0tzi7oKV'],
-        'punit': ['pubby26@gmail.com', '+14697671967']
-        }
+data = {'developer': ['abc@gmail.com', '+918933973212'],
+        'family': ['None','Cp9GFDONFMg84i0tzi7oKV']
+        } # These are Fake Values, you can change or add the values in the same pattern
 
 wish_morning = ('Good Morning', 'Happy Morning', ' A very good morning!', 'bonjour', 'rise and shine',
                 'top of the morning to you', 'lovely morning')
