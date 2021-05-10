@@ -1,7 +1,8 @@
 """ Data bank for Maya"""
 
 data = {'developer': ['abc@gmail.com', '+918933973212'],
-        'family': ['None','Cp9GFDONFMg84i0tzi7oKV']
+        'family': ['None','Cp9GFDONFMg84i0tzi7oKV'] # Goto Group Chat in your WhatsApp and Press Invite button in
+        # participants list
         } # These are Fake Values, you can change or add the values in the same pattern
 
 wish_morning = ('Good Morning', 'Happy Morning', ' A very good morning!', 'bonjour', 'rise and shine',
