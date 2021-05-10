@@ -16,7 +16,7 @@ import random
 import requests
 import platform, socket, re, uuid, json, psutil, logging
 # import automate_social
-import chatbot
+#import chatbot
 EMAIL_ADDRESS = os.environ.get('EMAIL_ADDRESS')
 EMAIL_PASSWORD = os.environ.get('EMAIL_PASS')
 user_api = os.environ.get('current_weather_api')
@@ -351,6 +351,7 @@ def matched_query(inp_query, matching_list):
 to_message, send_message_to, to, send_to = None, None, None, None
 if __name__ == '__main__':
     """Gets all commands and actuate accordingly from here"""
+    print("Try speaking 'Who are you?'")
     notification.notify(
         title='Maya here 😊😊',
         message='Your Virtual Assistant',
@@ -481,9 +482,9 @@ if __name__ == '__main__':
             distance_list = distance.split('and')
             #print(distance_list)
             getDistance(distance_list)
-        elif "let's talk" in query:
-            speak('Sure!! Why not?')
-            chatbot.chatting()
+        # elif "let's talk" in query:
+        #     speak('Sure!! Why not?')
+        #     chatbot.chatting()
         elif matched_query(query, dd.query_news) in query:
             print('Searching news...')
             speak('Searching news!!')

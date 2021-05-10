@@ -1,0 +1,106 @@
+--------------------
+Date: 25:1:2021
+Time: 9:24
+Phone number: +918933971392
+Message: Sending through Maya
+--------------------
+Date: 25:1:2021
+Time: 9:25
+Phone number: +918933971392
+Message: Sending through Maya
+--------------------
+Date: 25:1:2021
+Time: 9:30
+Phone number: +918933971392
+Message: Sending through Maya
+--------------------
+Date: 25:1:2021
+Time: 9:39
+Phone number: +918933971392
+Message: hello how are you
+--------------------
+Date: 25:1:2021
+Time: 9:42
+Phone number: +918933971392
+Message: Kuchh Bhi Dal de yaar
+--------------------
+Date: 25:1:2021
+Time: 10:9
+Phone number: +918933971392
+Message: I am Maiya sending you this message
+--------------------
+Date: 25:1:2021
+Time: 10:44
+Phone number: +918933971392
+Message: Kuchh Bhi dal do
+--------------------
+Date: 25:1:2021
+Time: 12:26
+Phone number: +917018102799
+Message: I have created a virtual assistant
+--------------------
+Date: 25:1:2021
+Time: 12:28
+Phone number: +917018102799
+Message: her name is Maya she is sending you this messages and I am ordering her
+--------------------
+Date: 25:1:2021
+Time: 14:18
+Phone number: +919452741610
+Message: this is your virtual assistant
+--------------------
+Date: 25:1:2021
+Time: 16:46
+Phone number: +919415945894
+Message: this message is sent by the virtual assistant
+--------------------
+Date: 26:1:2021
+Time: 21:57
+Phone number: +919415945894
+Message: sending through my virtual assistant
+--------------------
+Date: 28:1:2021
+Time: 10:43
+Phone number: +917018102799
+Message: Mera Hua demo dekhogi Abhi
+--------------------
+Date: 28:1:2021
+Time: 11:41
+Group_id: Cp9GDD4NFMg84i0tzi7oKV
+Message: sending through virtual assistant
+--------------------
+Date: 28:1:2021
+Time: 13:2
+Phone number: +919452741610
+Message: sending through virtual assistant
+--------------------
+Date: 28:1:2021
+Time: 19:3
+Group_id: Cp9GDD4NFMg84i0tzi7oKV
+Message: I am your virtual assistant
+--------------------
+Date: 28:1:2021
+Time: 19:7
+Phone number: +919415945894
+Message: I am your virtual assistant
+--------------------
+Date: 28:1:2021
+Time: 19:9
+Group_id: Cp9GDD4NFMg84i0tzi7oKV
+Message: testing my bot
+--------------------
+Date: 28:1:2021
+Time: 19:16
+Group_id: Cp9GDD4NFMg84i0tzi7oKV
+Message: testing my bot she is sending the message
+--------------------
+Date: 28:1:2021
+Time: 19:43
+Phone number: +919415945894
+Message: sending through virtual assistant
+--------------------
+Date: 10:5:2021
+Time: 17:39
+Phone number: +919415945894
+Message: sending through Maya
+--------------------
